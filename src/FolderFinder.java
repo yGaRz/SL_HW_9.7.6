@@ -1,8 +1,11 @@
 import java.io.File;
+import java.io.IOException;
 
 public class FolderFinder {
-    public static void main(String[] args) {
-        String path = "G:\\Notepad++";
+    public static void main(String[] args) throws IOException {
+        File directory = new File("");
+        String path = directory.getCanonicalPath();
+        System.out.println(path);
         startFind(path);
         System.out.println("Count file:"+countFile+", count folder:"+countFolder);
     }
